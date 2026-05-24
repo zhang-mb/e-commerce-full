@@ -1,0 +1,14 @@
+# IDE 配置文件
+.idea/
+.vscode/
+
+# 前端依赖和构建产物
+node_modules/
+dist/
+build/
+
+# 日志和临时文件
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
