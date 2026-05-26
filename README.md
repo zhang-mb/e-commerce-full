@@ -2,30 +2,14 @@
 项目介绍
 基于 SpringBoot+Redis+RabbitMQ 实现的前后端分离高并发秒杀系统，支撑大促期间 20000+ QPS 的流量，解决了库存超卖、流量击穿、重复下单、接口超时等核心问题。前端采用 Vue3 开发，完成商品展示、秒杀抢购、个人订单等业务页面。
 技术栈
-后端
-SpringBoot 2.7.15、MyBatis-Plus、Redis、RabbitMQ、Redisson
 前端
 Vue3、Vite、Axios、Vue Router
+后端
+SpringBoot 2.7.15、MyBatis-Plus、Redis、RabbitMQ、Redisson
 中间件
 Nginx、MySQL8.0
 工具
 Guava、Lua 脚本
-项目结构
-plaintext
-e-commerce-full/
-├── e-commerce-flash-sale-system-master/  # SpringBoot后端项目
-│   ├── mall-common/                      # 公共工具模块
-│   ├── mall-coupon/                      # 优惠券模块
-│   ├── mall-member/                      # 用户登录、权限模块
-│   ├── mall-order/                       # 订单秒杀核心模块
-│   ├── mall-product/                     # 商品模块
-│   ├── mall-search/                      # ES商品检索模块
-│   ├── mall-security/                    # JWT权限认证
-│   └── pom.xml
-├── flash-sale-frontend/                  # Vue前端
-│   ├── src/views/秒杀、商品、订单页面
-│   ├── src/components公共组件
-│   └── vite.config.js
 核心功能
 1. 商品缓存预热：项目启动时将热点商品同步到 Redis，降低 DB 查询压力
 2. 多级限流策略：Nginx 层限流 + Guava 接口层限流，防止流量击穿数据库
